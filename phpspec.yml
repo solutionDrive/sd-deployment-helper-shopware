@@ -1,0 +1,6 @@
+suites:
+  default:
+    namespace: sdDeploymentHelperShopware
+    psr4_prefix: sdDeploymentHelperShopware
+    spec_path: ./
+    src_path: ./
