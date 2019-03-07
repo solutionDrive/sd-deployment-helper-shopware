@@ -9,7 +9,9 @@ declare(strict_types=1);
 
 namespace sdDeploymentHelperShopware\Services;
 
+use Google\Cloud\Bigtable\Admin\V2\DeleteInstanceRequest;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Inspired by \Shopware\Components\Snippet\DatabaseHandler
@@ -43,13 +45,13 @@ class SnippetsReader implements SnippetsReaderInterface
         string $snippetsDir = null
     ): array {
         $snippets = [];
-        $snippetsDir = $snippetsDir ?: $this->kernelRootDir . '/snippets/';
+        $snippetsDir = $snippetsDir ? $this->kernelRootDir . DIRECTORY_SEPARATOR . $snippetsDir . DIRECTORY_SEPARATOR : $this->kernelRootDir . '/snippets/';
         if (!file_exists($snippetsDir)) {
             if ($snippetsDir == ($this->kernelRootDir . '/snippets/')) {
                 $this->printWarning('<info>No snippets folder found in Shopware core, skipping</info>');
             }
 
-            return;
+            return [];
         }
 
         $inputAdapter = new \Enlight_Config_Adapter_File([

@@ -12,6 +12,7 @@ namespace sdDeploymentHelperShopware\Commands;
 use sdDeploymentHelperShopware\Services\SnippetsReaderInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class SnippetsList extends Command
@@ -44,7 +45,7 @@ class SnippetsList extends Command
         InputInterface $input,
         OutputInterface $output
     ) {
-        $sourceDir = $this->container->getParameter('kernel.root_dir') . '/' . $input->getOption('source') . '/';
+        $sourceDir = $input->getOption('source');
 
         $snippets = $this->snippetsReader->readSnippets($sourceDir);
         foreach ($snippets as $namespace => $data) {
