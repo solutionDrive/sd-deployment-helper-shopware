@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace sdDeploymentHelperShopware\Services;
 
-use Google\Cloud\Bigtable\Admin\V2\DeleteInstanceRequest;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 
