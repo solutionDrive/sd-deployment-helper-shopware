@@ -27,5 +27,14 @@ class SnippetsReaderSpec extends ObjectBehavior
         $this->shouldImplement(SnippetsReaderInterface::class);
     }
 
+    public function let()
+    {
+        $kernelRootDir = vfsStream::setup('/kernel/');
+
+        $this->beConstructedWith(
+            $kernelRootDir->url()
+        );
+    }
+
     // For the moment nothing to test here anymore because there is much shopware logic which is not specable at the moment
 }
