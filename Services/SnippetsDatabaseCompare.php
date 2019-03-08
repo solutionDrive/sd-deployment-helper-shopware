@@ -50,7 +50,7 @@ class SnippetsDatabaseCompare implements SnippetsDatabaseCompareInterface
                 }
 
                 foreach ($data as $key => $value) {
-                    $databaseSnippet = $this->snippetRepository->findOneBy(['namespace' => $namespace, 'locale' => $localeObject->getId(), 'name' => $key]);
+                    $databaseSnippet = $this->snippetRepository->findOneBy(['namespace' => $namespace, 'localeId' => $localeObject->getId(), 'name' => $key]);
                     if (null === $databaseSnippet) {
                         continue;
                     }
