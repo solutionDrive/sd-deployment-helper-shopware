@@ -82,9 +82,9 @@ class SnippetsDatabaseCompareSpec extends ObjectBehavior
         $localeRepository->findOneBy(['locale' => 'en_EN'])
             ->willReturn($enLocale);
 
-        $snippetRepository->findOneBy(['namespace' => 'name/space', 'locale' => 1, 'name' => 'keyDE1'])
+        $snippetRepository->findOneBy(['namespace' => 'name/space', 'localeId' => 1, 'name' => 'keyDE1'])
             ->willReturn($deSnippet);
-        $snippetRepository->findOneBy(['namespace' => 'name/space', 'locale' => 2, 'name' => 'keyEN1'])
+        $snippetRepository->findOneBy(['namespace' => 'name/space', 'localeId' => 2, 'name' => 'keyEN1'])
             ->willReturn($enSnippet);
 
         $this->compareSnippetsWithDatabase($snippets)
