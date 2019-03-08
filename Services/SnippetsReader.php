@@ -60,7 +60,7 @@ class SnippetsReader implements SnippetsReaderInterface
 
         foreach ($finder as $file) {
             $filePath = $file->getRelativePathname();
-            if ('.ini' === $file->getExtension()) {
+            if ('ini' === $file->getExtension()) {
                 $namespace = substr($filePath, 0, -4);
             } else {
                 continue;
