@@ -21,7 +21,7 @@
         "php": "^7.0"
     },
     "require-dev": {
-        "mikey179/vfsStream": "^1.6",
+        "mikey179/vfsstream": "^1.6",
         "phpunit/phpunit": "^5.7",
         "shopware/shopware": "^5.2",
         "solutiondrive/sd-test-environment-shopware": "~0.2",
