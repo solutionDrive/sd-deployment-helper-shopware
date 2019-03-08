@@ -44,11 +44,9 @@ class SnippetsReader implements SnippetsReaderInterface
         string $snippetsDir = null
     ): array {
         $snippets = [];
-        $snippetsDir = $snippetsDir ? $this->kernelRootDir . DIRECTORY_SEPARATOR . $snippetsDir . DIRECTORY_SEPARATOR : $this->kernelRootDir . '/snippets/';
+        $snippetsDir = $this->getSnippetsDir($snippetsDir);
         if (!file_exists($snippetsDir)) {
-            if ($snippetsDir == ($this->kernelRootDir . '/snippets/')) {
-                $this->printWarning('<info>No snippets folder found in Shopware core, skipping</info>');
-            }
+            $this->checkSnippetsDir($snippetsDir);
 
             return [];
         }
@@ -62,7 +60,7 @@ class SnippetsReader implements SnippetsReaderInterface
 
         foreach ($finder as $file) {
             $filePath = $file->getRelativePathname();
-            if (strpos($filePath, '.ini') == strlen($filePath) - 4) {
+            if ('.ini' === $file->getExtension()) {
                 $namespace = substr($filePath, 0, -4);
             } else {
                 continue;
@@ -102,6 +100,23 @@ class SnippetsReader implements SnippetsReaderInterface
     {
         if ($this->output) {
             $this->output->writeln($message);
+        }
+    }
+
+    private function getSnippetsDir(
+        string $snippetsDir = null
+    ): string {
+        if ($snippetsDir) {
+            return $this->kernelRootDir . DIRECTORY_SEPARATOR . $snippetsDir . DIRECTORY_SEPARATOR;
+        }
+        return $this->kernelRootDir . DIRECTORY_SEPARATOR . 'snippets' . DIRECTORY_SEPARATOR;
+    }
+
+    private function checkSnippetsDir(
+        string $snippetsDir
+    ) {
+        if ($snippetsDir === ($this->kernelRootDir . DIRECTORY_SEPARATOR . 'snippets' . DIRECTORY_SEPARATOR)) {
+            $this->printWarning('<info>No snippets folder found in Shopware core, skipping</info>');
         }
     }
 }
