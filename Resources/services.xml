@@ -4,6 +4,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <imports>
         <import resource="services/commands.xml" />
+        <import resource="services/services.xml" />
     </imports>
 
     <services>
@@ -11,8 +12,5 @@
             <factory service="shopware.plugin.cached_config_reader" method="getByPluginName"/>
             <argument type="string">sdDeploymentHelperShopware</argument>
         </service>-->
-        <service id="sd.deploymenthelper.services.snippets_reader" class="sdDeploymentHelperShopware\Services\SnippetsReader">
-            <argument>%kernel.root_dir%</argument>
-        </service>
     </services>
 </container>

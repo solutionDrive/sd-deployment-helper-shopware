@@ -8,5 +8,11 @@
 
             <tag name="console.command" />
         </service>
+        <service id="sd.deploymenthelper.commands.snippets_compare" class="sdDeploymentHelperShopware\Commands\SnippetsCompare">
+            <argument type="service" id="sd.deploymenthelper.services.snippets_reader" />
+            <argument type="service" id="sd.deploymenthelper.services.snippets_database_compare" />
+
+            <tag name="console.command" />
+        </service>
     </services>
 </container>
