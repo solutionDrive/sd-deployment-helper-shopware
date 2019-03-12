@@ -71,7 +71,7 @@ class SnippetsCompare extends Command
         $table->setRows($valuesThatDiffer);
         $table->render();
 
-        if (0 !== count($valuesThatDiffer)) {
+        if (false === empty($valuesThatDiffer)) {
             return 1;
         }
         return 0;
