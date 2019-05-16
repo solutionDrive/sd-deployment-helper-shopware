@@ -10,7 +10,7 @@ cache:
 matrix:
   include:
     - php: 7.2
-      env: SHOPWARE_VERSION=\~5.5.7
+      env: SHOPWARE_VERSION=\~5.5.8
     - php: 7.2
       env: SHOPWARE_VERSION=\~5.4.6
     - php: 7.2
@@ -18,7 +18,7 @@ matrix:
     - php: 7.2
       env: SHOPWARE_VERSION=\~5.2.27
     - php: 7.1
-      env: SHOPWARE_VERSION=\~5.5.7
+      env: SHOPWARE_VERSION=\~5.5.8
     - php: 7.1
       env: SHOPWARE_VERSION=\~5.4.6
     - php: 7.1
@@ -26,7 +26,7 @@ matrix:
     - php: 7.1
       env: SHOPWARE_VERSION=\~5.2.27
     - php: 7.0
-      env: SHOPWARE_VERSION=\~5.5.7
+      env: SHOPWARE_VERSION=\~5.5.8
     - php: 7.0
       env: SHOPWARE_VERSION=\~5.4.6
     - php: 7.0
