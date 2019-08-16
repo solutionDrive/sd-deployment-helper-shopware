@@ -16,13 +16,4 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class sdDeploymentHelperShopware extends Plugin
 {
-
-    /**
-    * @param ContainerBuilder $container
-    */
-    public function build(ContainerBuilder $container)
-    {
-        $container->setParameter('sddeploymenthelpershopware.plugin_dir', $this->getPath());
-        parent::build($container);
-    }
 }
