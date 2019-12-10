@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 /*
- * Created by solutionDrive GmbH
+ * Created by netlogix GmbH & Co. KG
  *
- * @copyright solutionDrive GmbH
+ * @copyright netlogix GmbH & Co. KG
  */
 
 namespace sdDeploymentHelperShopware\Commands;
@@ -60,11 +60,11 @@ class SnippetsList extends Command
         $sourceDir = $input->getOption('source');
 
         $snippets = $this->snippetsReader->readSnippets($sourceDir);
-        foreach ($snippets as $namespace=> $localeData) {
+        foreach ($snippets as $namespace => $localeData) {
             foreach ($localeData as $locale => $data) {
                 foreach ($data as $key => $value) {
-                    if (45 < strlen($value)) {
-                        $value = substr($value, 0, 45) . '...';
+                    if (45 < \strlen($value)) {
+                        $value = \substr($value, 0, 45) . '...';
                     }
                     $table->addRow([$namespace, $locale, $key, $value]);
                 }
@@ -73,6 +73,4 @@ class SnippetsList extends Command
         }
         $table->render();
     }
-
-
 }

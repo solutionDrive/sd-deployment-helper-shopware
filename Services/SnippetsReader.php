@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 /*
- * Created by solutionDrive GmbH
+ * Created by netlogix GmbH & Co. KG
  *
- * @copyright solutionDrive GmbH
+ * @copyright netlogix GmbH & Co. KG
  */
 
 namespace sdDeploymentHelperShopware\Services;
@@ -45,7 +45,7 @@ class SnippetsReader implements SnippetsReaderInterface
     ): array {
         $snippets = [];
         $snippetsDir = $this->getSnippetsDir($snippetsDir);
-        if (!file_exists($snippetsDir)) {
+        if (!\file_exists($snippetsDir)) {
             $this->checkSnippetsDir($snippetsDir);
 
             return [];
@@ -61,7 +61,7 @@ class SnippetsReader implements SnippetsReaderInterface
         foreach ($finder as $file) {
             $filePath = $file->getRelativePathname();
             if ('ini' === $file->getExtension()) {
-                $namespace = substr($filePath, 0, -4);
+                $namespace = \substr($filePath, 0, -4);
             } else {
                 continue;
             }

@@ -2,19 +2,17 @@
 declare(strict_types=1);
 
 /*
- * Created by solutionDrive GmbH
+ * Created by netlogix GmbH & Co. KG
  *
- * @copyright solutionDrive GmbH
+ * @copyright netlogix GmbH & Co. KG
  */
 
 namespace spec\sdDeploymentHelperShopware\Services;
 
 use org\bovigo\vfs\vfsStream;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use sdDeploymentHelperShopware\Services\SnippetsReader;
 use sdDeploymentHelperShopware\Services\SnippetsReaderInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
 class SnippetsReaderSpec extends ObjectBehavior
 {

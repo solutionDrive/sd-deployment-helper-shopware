@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 /*
- * Created by solutionDrive GmbH
+ * Created by netlogix GmbH & Co. KG
  *
- * @copyright solutionDrive GmbH
+ * @copyright netlogix GmbH & Co. KG
  */
 
 namespace sdDeploymentHelperShopware\Services;
@@ -16,9 +16,6 @@ use Shopware\Models\Snippet\Snippet;
 
 class SnippetsDatabaseCompare implements SnippetsDatabaseCompareInterface
 {
-    /** @var ModelManager */
-    private $entityManager;
-
     /** @var EntityRepository */
     private $localeRepository;
 
@@ -28,8 +25,6 @@ class SnippetsDatabaseCompare implements SnippetsDatabaseCompareInterface
     public function __construct(
         ModelManager $entityManager
     ) {
-        $this->entityManager = $entityManager;
-
         $this->localeRepository = $entityManager->getRepository(Locale::class);
         $this->snippetRepository = $entityManager->getRepository(Snippet::class);
     }
@@ -42,7 +37,7 @@ class SnippetsDatabaseCompare implements SnippetsDatabaseCompareInterface
     ): array {
         $valuesThatDiffer = [];
 
-        foreach ($snippets as $namespace=> $localeData) {
+        foreach ($snippets as $namespace => $localeData) {
             foreach ($localeData as $locale => $data) {
                 $localeObject = $this->localeRepository->findOneBy(['locale' => $locale]);
                 if (null === $localeObject) {
