@@ -2,16 +2,15 @@
 declare(strict_types=1);
 
 /*
- * Created by solutionDrive GmbH
+ * Created by netlogix GmbH & Co. KG
  *
- * @copyright solutionDrive GmbH
+ * @copyright netlogix GmbH & Co. KG
  */
 
 namespace spec\sdDeploymentHelperShopware\Services;
 
 use Doctrine\ORM\EntityRepository;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use sdDeploymentHelperShopware\Services\SnippetsDatabaseCompare;
 use sdDeploymentHelperShopware\Services\SnippetsDatabaseCompareInterface;
 use Shopware\Components\Model\ModelManager;
