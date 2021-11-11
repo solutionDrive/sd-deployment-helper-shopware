@@ -29,6 +29,9 @@ class SnippetsList extends Command
         $this->snippetsReader = $snippetsReader;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function configure()
     {
         $this
@@ -43,6 +46,9 @@ class SnippetsList extends Command
             );
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function execute(
         InputInterface $input,
         OutputInterface $output

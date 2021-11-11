@@ -5,16 +5,6 @@
 This plugin contains some helping functions/classes etc. to make a deployment a bit easier
 
 ## Running Tests
-
-### phpunit - functional
-
-    Not working at the moment because phpunit is functional testing and there is no running shopware installation.
-
-    $ vendor/bin/phpunit
-    
-### phpunit - unit
-
-    $ vendor/bin/phpunit -c phpunit_unit.xml.dist
     
 ### phpspec
 

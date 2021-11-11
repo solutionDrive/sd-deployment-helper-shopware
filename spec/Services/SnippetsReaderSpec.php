@@ -16,17 +16,17 @@ use sdDeploymentHelperShopware\Services\SnippetsReaderInterface;
 
 class SnippetsReaderSpec extends ObjectBehavior
 {
-    public function it_is_initializable()
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(SnippetsReader::class);
     }
 
-    public function it_implements_correct_interface()
+    public function it_implements_correct_interface(): void
     {
         $this->shouldImplement(SnippetsReaderInterface::class);
     }
 
-    public function let()
+    public function let(): void
     {
         $kernelRootDir = vfsStream::setup('/kernel/');
 

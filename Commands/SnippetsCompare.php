@@ -34,6 +34,9 @@ class SnippetsCompare extends Command
         $this->snippetsDatabaseCompare = $snippetsDatabaseCompare;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function configure()
     {
         $this
@@ -48,6 +51,9 @@ class SnippetsCompare extends Command
             );
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function execute(
         InputInterface $input,
         OutputInterface $output

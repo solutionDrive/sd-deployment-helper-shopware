@@ -29,10 +29,7 @@ class SnippetsReader implements SnippetsReaderInterface
         $this->kernelRootDir = $kernelRootDir;
     }
 
-    /**
-     * @param OutputInterface $output
-     */
-    public function setOutput(OutputInterface $output)
+    public function setOutput(OutputInterface $output): void
     {
         $this->output = $output;
     }
@@ -81,10 +78,8 @@ class SnippetsReader implements SnippetsReaderInterface
 
     /**
      * Prints given $message if output interface is set and it is verbose
-     *
-     * @param string $message
      */
-    private function printNotice($message)
+    private function printNotice(string $message): void
     {
         if ($this->output && $this->output->getVerbosity() >= OutputInterface::VERBOSITY_VERBOSE) {
             $this->output->writeln($message);
@@ -93,10 +88,8 @@ class SnippetsReader implements SnippetsReaderInterface
 
     /**
      * Prints given $message if output interface is set
-     *
-     * @param string $message
      */
-    private function printWarning($message)
+    private function printWarning(string $message): void
     {
         if ($this->output) {
             $this->output->writeln($message);
@@ -114,7 +107,7 @@ class SnippetsReader implements SnippetsReaderInterface
 
     private function checkSnippetsDir(
         string $snippetsDir
-    ) {
+    ): void {
         if ($snippetsDir === ($this->kernelRootDir . DIRECTORY_SEPARATOR . 'snippets' . DIRECTORY_SEPARATOR)) {
             $this->printWarning('<info>No snippets folder found in Shopware core, skipping</info>');
         }

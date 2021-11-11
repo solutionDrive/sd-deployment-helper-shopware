@@ -1,5 +1,5 @@
 imports:
-- { resource: '../vendor/bin/easy-coding-standard-php7.0.yml' }
+- { resource: '../vendor/bin/easy-coding-standard.yml' }
 
 parameters:
   skip:
