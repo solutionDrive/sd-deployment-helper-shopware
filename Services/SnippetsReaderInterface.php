@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 interface SnippetsReaderInterface
 {
-    public function setOutput(OutputInterface $output);
+    public function setOutput(OutputInterface $output): void;
 
     /**
      * @return string[]

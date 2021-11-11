@@ -19,12 +19,12 @@ use Shopware\Models\Snippet\Snippet;
 
 class SnippetsDatabaseCompareSpec extends ObjectBehavior
 {
-    public function it_is_initializable()
+    public function it_is_initializable(): void
     {
         $this->shouldHaveType(SnippetsDatabaseCompare::class);
     }
 
-    public function it_implements_correct_interface()
+    public function it_implements_correct_interface(): void
     {
         $this->shouldImplement(SnippetsDatabaseCompareInterface::class);
     }
@@ -33,7 +33,7 @@ class SnippetsDatabaseCompareSpec extends ObjectBehavior
         ModelManager $entityManager,
         EntityRepository $localeRepository,
         EntityRepository $snippetRepository
-    ) {
+    ): void {
         $this->beConstructedWith(
             $entityManager
         );
@@ -52,7 +52,7 @@ class SnippetsDatabaseCompareSpec extends ObjectBehavior
         EntityRepository $snippetRepository,
         Snippet $deSnippet,
         Snippet $enSnippet
-    ) {
+    ): void {
         $snippets = [
             'name/space' => [
                 'de_DE' => [
@@ -97,7 +97,7 @@ class SnippetsDatabaseCompareSpec extends ObjectBehavior
         EntityRepository $snippetRepository,
         Snippet $deSnippet,
         Snippet $enSnippet
-    ) {
+    ): void {
         $snippets = [
             'name/space' => [
                 'de_DE' => [
