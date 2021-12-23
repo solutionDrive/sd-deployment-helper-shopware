@@ -6,13 +6,13 @@
         <service id="sd.deploymenthelper.commands.snippets_list" class="sdDeploymentHelperShopware\Commands\SnippetsList">
             <argument type="service" id="sd.deploymenthelper.services.snippets_reader" />
 
-            <tag name="console.command" />
+            <tag name="console.command" command="sd:snippets:list" />
         </service>
         <service id="sd.deploymenthelper.commands.snippets_compare" class="sdDeploymentHelperShopware\Commands\SnippetsCompare">
             <argument type="service" id="sd.deploymenthelper.services.snippets_reader" />
             <argument type="service" id="sd.deploymenthelper.services.snippets_database_compare" />
 
-            <tag name="console.command" />
+            <tag name="console.command" command="sd:snippets:compare" />
         </service>
     </services>
 </container>
